@@ -1,26 +1,21 @@
-[![Java CI](https://github.com/chaiebchaher-gif/Esprit-Java-Prosits/actions/workflows/gradle.yml/badge.svg)](https://github.com/chaiebchaher-gif/Esprit-Java-Prosits/actions/workflows/gradle.yml)
+# Prosit 5 - Object-Oriented Programming
 
-![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk)
-![IDE](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea)
-![Git](https://img.shields.io/badge/GIT-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In_Progress-success?style=for-the-badge)
+## Description
+This repository contains the implementation for **Prosit 5**.
 
-# 🦁 Esprit - Zoo Management
+## Architecture & Interaction Diagram
 
 ```mermaid
-graph TD
-    Root[Esprit Java Prosits] --> Prosit4[Branche: prosit4]
-    
-    Prosit4 --> Entities[Classes: Animal & Zoo]
-    Prosit4 --> Features[Fonctionnalités Prosit 4]
-    
-    Entities --> Animal[Classe Animal]
-    Entities --> Zoo[Classe Zoo]
-    
-    Features --> Add[Ajouter un animal]
-    Features --> Display[Afficher le zoo]
-    Features --> Search[Rechercher un animal]
-```
+sequenceDiagram
+    autonumber
+    actor User
+    participant Main as Main App
+    participant Service as Business Service
+    participant Model as Entity/Model
 
-## 📌 Navigation
-Utilisez le menu déroulant des branches en haut à gauche pour consulter **prosit4**.
+    User->>Main: Execute Application
+    Main->>Service: Call Business Method
+    Service->>Model: Create / Process Objects
+    Model-->>Service: Return Result / Status
+    Service-->>Main: Return Processed Data
+    Main-->>User: Display Output / Logs
